@@ -1,0 +1,15 @@
+<!-- Components info: https://webdev.dartlang.org/components -->
+<p *ngIf="pokemons.isEmpty">
+  Nothing to see. Error is occurred!
+</p>
+
+<div *ngIf="pokemons.isNotEmpty">
+  <ul>
+      <li *ngFor="let pokemon of pokemons; let i=index">
+        <material-checkbox #done materialTooltip="Mark pokemon as captured">
+        </material-checkbox>
+        <img [src]="pokemon.imageUrl" [alt]="pokemon.name" align="center"/>
+        <span [class.done]="done.checked">id: {{pokemon.id}}, name: {{pokemon.name}}</span>
+      </li>
+  </ul>
+</div>
